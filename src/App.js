@@ -7,9 +7,9 @@ import logo from "./logo.png";
 
 function App() {
   return (
-    <div className="App">
-      <div>Hey, lol</div>
+    <div>
       <Routes>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/Home" element={<Home />}></Route>
         <Route path="/ProductListing" element={<ProductListing />}></Route>
         <Route path="/Wishlist" element={<Wishlist />}></Route>
