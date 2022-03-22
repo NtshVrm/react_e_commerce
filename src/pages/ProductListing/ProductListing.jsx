@@ -1,5 +1,5 @@
 import "./ProductListing.css";
-
+import { Link } from "react-router-dom";
 import {
     alfa,
     alphatauri,
@@ -34,16 +34,16 @@ export default function ProductListing(){
         <><header className="navbar">
             <div className="nav-brand">
                 <img className="nav-logo hidden" src="https://picsum.photos/1000/400"></img>
-                <a className="home-link" href="/index.html"><div className="nav-name">SlipStream</div></a>
+                <Link className="home-link" to="/Home"><div className="nav-name">SlipStream</div></Link>
             </div>
             <div className="nav-icons">
                 <div className="searchbar">
                     <input className="search-input" type="search" />
                         <div className="search-logo"><i className="fas fa-search"></i></div>
                     </div>
-                <a className="icon" href="/pages/wishlist/wishlist.html"><i className="far fa-heart"></i></a>
-                <a className="icon" href="/pages/cart/cart.html"><i className="fas fa-shopping-bag"></i></a>
-                <a className="icon" href="/pages/auth/signin.html"><i className="far fa-user"></i></a>
+                <Link className="icon" to="/Wishlist"><i className="far fa-heart"></i></Link>
+                <Link className="icon" to="/Cart"><i className="fas fa-shopping-bag"></i></Link>
+                <Link className="icon" to="/Signin"><i className="far fa-user"></i></Link>
             </div>
         </header><main className="product-container">
                 <div className="listing-header">
@@ -80,8 +80,8 @@ export default function ProductListing(){
                                 <div className="filter-icon"><i className="fas fa-minus"></i></div>
                             </div>
                             <div className="filter-list">
-                                <div className="filter-option"><input type="radio" /><label>Low to High</label></div>
-                                <div className="filter-option"><input type="radio" /><label>High to Low</label></div>
+                                <div className="filter-option"><input type="radio" name="sort"/><label>Low to High</label></div>
+                                <div className="filter-option"><input type="radio" name="sort" /><label>High to Low</label></div>
                             </div>
                         </div>
 

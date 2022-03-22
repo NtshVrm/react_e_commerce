@@ -1,10 +1,17 @@
-@import url("/src/reset.css");
-@import url("../Pages.css");
-@import url("https://infinityui.netlify.app/components/slider/slider.css");
+@import url("../pages.css");
 @import url("https://infinityui.netlify.app/components/card/card.css");
+@import url("https://infinityui.netlify.app/components/slider/slider.css");
+@import url("/src/reset.css");
 
 * {
   font-family: "Raleway", sans-serif;
+}
+
+:root {
+  --primary-color: #059669;
+  --secondary-color: white;
+
+  --background: #fee2e2;
 }
 
 .product-container {
