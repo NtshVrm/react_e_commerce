@@ -1,0 +1,278 @@
+@import url("../../reset.css");
+/* @import url("../pages.css");
+
+@import url("../ProductListing/ProductListing.css");
+@import url("../Wishlist/Wishlist.css"); */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+.cart-container {
+  display: grid;
+  grid-template-rows: 0.5fr 4fr;
+  grid-template-areas:
+    "listing-header"
+    "cart-items";
+  height: 100vh;
+}
+
+.cart-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "cards summary";
+}
+
+.cart-cards {
+  grid-area: cards;
+  background-color: lightgray;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 0 1rem 1rem 1rem;
+  gap: 2rem;
+  /* justify-content: space-between; */
+  height: 100vh;
+  overflow: scroll;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-info {
+  font-size: 1.3rem;
+}
+
+.card-price {
+  font-size: 1.5rem;
+}
+
+.horizontal-delete {
+  top: 0.4rem;
+  left: 0.5rem;
+}
+
+.quantity {
+  display: flex;
+  width: fit-content;
+  padding: 0.5rem;
+}
+
+.cart-summary {
+  grid-area: summary;
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  grid-template-areas:
+    "shipping"
+    "pricing";
+  height: 100vh;
+}
+
+.shipping {
+  grid-area: shipping;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "address secondary-info";
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.address {
+  grid-area: address;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-right: 1px solid var(--primary-color);
+}
+
+.address-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  gap: 1rem;
+  color: var(--primary-color);
+}
+
+.change {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.change-btn {
+  border: 2px solid var(--primary-color);
+  padding: 0.3rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.secondary-info {
+  grid-area: secondary-info;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "update"
+    "pay-info";
+}
+
+.update {
+  grid-area: update;
+  background-color: white;
+  display: flex;
+  flex-flow: column;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-bottom: 1px solid var(--primary-color);
+}
+.update-title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  color: var(--primary-color);
+}
+
+.update-desc {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+
+.update-email {
+  display: flex;
+  gap: 1rem;
+}
+
+.email {
+  color: var(--primary-color);
+}
+.phone {
+  color: var(--primary-color);
+}
+
+.update-phone {
+  display: flex;
+  gap: 1rem;
+}
+
+.pay-detail {
+  grid-area: pay-info;
+  display: flex;
+  flex-flow: column;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.pay-title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  color: var(--primary-color);
+}
+
+.pay-logo {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.pay-desc {
+  display: flex;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+.expiry {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.pay-info {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+}
+
+.pricing {
+  grid-area: pricing;
+  background-color: white;
+  display: flex;
+  flex-flow: column;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.pricing-title {
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  justify-content: center;
+  color: var(--primary-color);
+  gap: 1rem;
+}
+
+.pricing-breakdown {
+  display: flex;
+  flex-flow: column;
+  font-size: 1.5rem;
+  gap: 1rem;
+}
+
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.pricing-name {
+  color: black;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  font-style: italic;
+}
+
+.pricing-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding: 0.5rem;
+  border-top: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.pricing-checkout {
+  display: flex;
+  align-items: center;
+}
+
+.continue {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  padding: 0.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.checkout {
+  border: none;
+  margin: 1rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  cursor: pointer;
+}
