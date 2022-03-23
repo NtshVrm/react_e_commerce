@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react/cjs/react.production.min";
 import { f1_hoodie, cap, shirt } from "../../assets";
+import axios from "axios";
 
 export function Category(){
+
     return(
         <div className="category-container">
                     <div className="category-header">
