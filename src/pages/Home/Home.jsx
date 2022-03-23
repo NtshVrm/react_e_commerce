@@ -2,7 +2,7 @@
 import { max_lewis } from "../../assets";
   
 import { Link } from "react-router-dom";
-import { Category, Feature, Footer, Navbar, Teams } from "../../components";
+import { Category, Feature, Footer, Navbar, Teams, Review } from "../../components";
 
 
 export default function Home(){

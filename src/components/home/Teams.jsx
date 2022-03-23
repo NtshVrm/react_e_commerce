@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { redbull, mercedes, ferrari, mclaren, alpine, alphatauri, aston, alfa, williams, haas } from "../../assets";
-
+import "./Home.css";
 export function Teams(){
     return(
         <div className="team-container">
