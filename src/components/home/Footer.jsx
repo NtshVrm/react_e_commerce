@@ -1,4 +1,7 @@
-import { Link } from "react-router-dom"
+import { faCcAmazonPay, faCcAmex, faCcApplePay, faCcMastercard, faCcPaypal, faCcVisa, faFacebook, faGooglePay, faInstagram, faTwitter, faVimeoSquare } from "@fortawesome/free-brands-svg-icons";
+import { faCopyright } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import "./Home.css";
 export function Footer(){
     return(
@@ -10,21 +13,21 @@ export function Footer(){
                     <Link className="doc-item" to="/">Terms & Conditions</Link>
                 </div>
                 <div className="footer-social">
-                    <Link className="social-item" to="/"><i className="fab fa-facebook"></i></Link>
-                    <Link className="social-item" to="/"><i className="fab fa-twitter"></i></Link>
-                    <Link className="social-item" to="/"><i className="fab fa-instagram"></i></Link>
+                    <Link className="social-item" to="/"><FontAwesomeIcon icon={faFacebook} /></Link>
+                    <Link className="social-item" to="/"><FontAwesomeIcon icon={faTwitter} /></Link>
+                    <Link className="social-item" to="/"><FontAwesomeIcon icon={faInstagram} /></Link>
                     <div className="sep-item">|</div>
-                    <div className="pay-item"><i className="fab fa-google-pay"></i></div>
-                    <div className="pay-item"><i className="fab fa-cc-visa"></i></div>
-                    <div className="pay-item"><i className="fab fa-cc-paypal"></i></div>
-                    <div className="pay-item"><i className="fab fa-cc-mastercard"></i></div>
-                    <div className="pay-item"><i className="fab fa-cc-apple-pay"></i></div>
-                    <div className="pay-item"><i className="fab fa-cc-amex"></i></div>
-                    <div className="pay-item"><i className="fab fa-cc-amazon-pay"></i></div>
+                    <div className="pay-item"><FontAwesomeIcon icon={faGooglePay} /></div>
+                    <div className="pay-item"><FontAwesomeIcon icon={faCcVisa} /></div>
+                    <div className="pay-item"><FontAwesomeIcon icon={faCcPaypal} /></div>
+                    <div className="pay-item"><FontAwesomeIcon icon={faCcMastercard} /></div>
+                    <div className="pay-item"><FontAwesomeIcon icon={faCcApplePay} /></div>
+                    <div className="pay-item"><FontAwesomeIcon icon={faCcAmex} /></div>
+                    <div className="pay-item"><FontAwesomeIcon icon={faCcAmazonPay} /></div>
 
                 </div>
                 <div className="footer-copyright">
-                    <div className="copyright-item"><i className="far fa-copyright"></i> 2022 NtshVrm.All right reserved.</div>
+                    <div className="copyright-item"><FontAwesomeIcon icon={faCopyright} /> 2022 NtshVrm, All right reserved.</div>
                 </div>
         </footer>
     )
