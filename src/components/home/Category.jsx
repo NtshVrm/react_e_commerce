@@ -4,72 +4,72 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-export function Category(){
+export function Category() {
+  const [categories, setCategories] = useState([]);
 
-    const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    async function getCat() {
+      try {
+        const response = await axios.get("/api/categories");
+        setCategories(response.data.categories);
+      } catch (error) {
+        console.log("Could not fetch the categories", error);
+      }
+    }
+    getCat();
+  }, []);
 
-    useEffect(() => {
-        async function getCat(){
-            try{
-                const response = await axios.get("/api/categories");
-                setCategories(response.data.categories)
-            }
-            catch(error){
-                console.log("Could not fetch the categories", error);
-            }
-            
-        }
-        getCat();
-    },[])
+  const outputCat = categories.slice(0, 3);
+  const itemLarge = outputCat.filter((item) => item.display === "large");
+  const itemSmall = outputCat.filter((item) => item.display === "small");
 
-    const outputCat = categories.slice(0,3);
-    const itemLarge = outputCat.filter((item) => item.display==="large");
-    const itemSmall = outputCat.filter((item) => item.display==="small");
+  return (
+    <div className="category-container">
+      <div className="category-header">
+        <div className="category-title">Shop by category</div>
+        <Link className="category-action" to="/ProductListing">
+          Browse all categories
+          <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
+      </div>
 
-    return(
-        <div className="category-container">
-
-            <div className="category-header">
-                <div className="category-title">Shop by category</div>
-                <Link className="category-action" to="/ProductListing">
-                    Browse all categories<FontAwesomeIcon icon={faArrowRight}/>
-                </Link>
-            </div>
-
-            <div className="category-list">    
-
-                <div className="item-large">
-                    {
-                        itemLarge && itemLarge.map((item) => {
-                            return(
-                                <div key={item.id} className="item">
-                                    <img
-                                        className="item-img-large"
-                                        src={item.image}
-                                        alt="cat-large-img" />
-                                    <Link className="item-title" to="/ProductListing">{item.categoryName}</Link>
-                                </div>
-                            )
-                        })
-                    }
+      <div className="category-list">
+        <div className="item-large">
+          {itemLarge &&
+            itemLarge.map((item) => {
+              return (
+                <div key={item.id} className="item">
+                  <img
+                    className="item-img-large"
+                    src={item.image}
+                    alt="cat-large-img"
+                  />
+                  <Link className="item-title" to="/ProductListing">
+                    {item.categoryName}
+                  </Link>
                 </div>
-
-                <div className="item-small">
-                    {
-                        itemSmall && itemSmall.map((item) => {
-                            return(
-                                <div key={item.id} className="item">
-                                    <img
-                                        className="item-img-small"
-                                        src={item.image}
-                                        alt="cat-large-small" />
-                                    <Link className="item-title" to="/ProductListing">{item.categoryName}</Link>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            </div>
+              );
+            })}
         </div>
-    );
+
+        <div className="item-small">
+          {itemSmall &&
+            itemSmall.map((item) => {
+              return (
+                <div key={item.id} className="item">
+                  <img
+                    className="item-img-small"
+                    src={item.image}
+                    alt="cat-large-small"
+                  />
+                  <Link className="item-title" to="/ProductListing">
+                    {item.categoryName}
+                  </Link>
+                </div>
+              );
+            })}
+        </div>
+      </div>
+    </div>
+  );
 }
