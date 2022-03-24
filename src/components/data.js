@@ -1,4 +1,11 @@
 import {
+  faArrowRightArrowLeft,
+  faEarthAsia,
+  faPercent,
+  faPercentage,
+  faTruckFast,
+} from "@fortawesome/free-solid-svg-icons";
+import {
   redbull,
   mercedes,
   ferrari,
@@ -74,4 +81,34 @@ const teams = [
   },
 ];
 
-export { teams };
+const feature = [
+  {
+    id: 1,
+    icon: faArrowRightArrowLeft,
+    title: "Free Returns",
+    description:
+      "Get free returns on all your orders when returned within 7 days.",
+  },
+  {
+    id: 2,
+    icon: faTruckFast,
+    title: "Fast Shipping",
+    description: "Your orders are shipped within 36 hours of order placement.",
+  },
+  {
+    id: 3,
+    icon: faPercent,
+    title: "Amazing Discounts",
+    description:
+      "Discounts on all categories all throughout the year with special offers on race weekends.",
+  },
+  {
+    id: 4,
+    icon: faEarthAsia,
+    title: "Eco Friendly",
+    description:
+      "3% of all profits goes towards eco-friendly causes like teamtrees etc.",
+  },
+];
+
+export { teams, feature };
