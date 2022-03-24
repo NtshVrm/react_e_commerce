@@ -6,4 +6,6 @@ import { Review } from "./home/Review";
 
 import { Footer } from "./home/Footer";
 
-export { Navbar, Category, Feature, Teams, Review, Footer };
+import { Banner } from "./home/Banner";
+
+export { Navbar, Category, Feature, Teams, Review, Footer, Banner };
