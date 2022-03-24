@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export function Category(){
 
@@ -30,7 +32,7 @@ export function Category(){
             <div className="category-header">
                 <div className="category-title">Shop by category</div>
                 <Link className="category-action" to="/ProductListing">
-                    Browse all categories<i className="fas fa-arrow-right"></i>
+                    Browse all categories<FontAwesomeIcon icon={faArrowRight}/>
                 </Link>
             </div>
 

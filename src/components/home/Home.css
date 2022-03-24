@@ -133,7 +133,7 @@ main {
 
 .icon {
   text-decoration: none;
-  color: black;
+  color: var(--primary-color);
 }
 
 .icon:hover {
