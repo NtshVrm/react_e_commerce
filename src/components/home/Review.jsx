@@ -1,30 +1,27 @@
 import "./Home.css";
+
+import { review } from "../data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+
 export function Review(){
     return(
         <div className="review-container">
             <div className="review-heading">What are people saying?</div>
             <div className="review">
-                <div className="review-item">
-                    <div className="review-image"><i className="fas fa-quote-left"></i></div>
-                    <div className="review-desc">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint enim iure id praesentium, atque repudiandae minus quasi ut voluptatibus, delectus iusto ratione nostrum quos officia aspernatur doloremque aliquid dicta accusantium?
-                    </div>
-                    <div className="review-name">-Lewis Hamilton</div>
-                </div>
-                <div className="review-item">
-                    <div className="review-image"><i className="fas fa-quote-left"></i></div>
-                    <div className="review-desc">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint enim iure id praesentium, atque repudiandae minus quasi ut voluptatibus, delectus iusto ratione nostrum quos officia aspernatur doloremque aliquid dicta accusantium?
-                    </div>
-                    <div className="review-name">-Max Verstappen</div>
-                </div>
-                <div className="review-item">
-                    <div className="review-image"><i className="fas fa-quote-left"></i></div>
-                    <div className="review-desc">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint enim iure id praesentium, atque repudiandae minus quasi ut voluptatibus, delectus iusto ratione nostrum quos officia aspernatur doloremque aliquid dicta accusantium?
-                    </div>
-                    <div className="review-name">-Alex Albon</div>
-                </div>
+                {
+                    review && review.map(item => {
+                        return(
+                            <div key={item.id} className="review-item">
+                                <div className="review-image"><FontAwesomeIcon icon={faQuoteLeft} /></div>
+                                <div className="review-desc">
+                                    {item.description}
+                                </div>
+                                <div className="review-name">-{item.name}</div>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
     );

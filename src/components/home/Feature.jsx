@@ -12,7 +12,7 @@ export function Feature(){
                         {
                             feature && feature.map((item) => {
                                 return(
-                                    <div className="feature-item">
+                                    <div key={item.id} className="feature-item">
                                         <div className="feature-image">
                                         <FontAwesomeIcon icon={item.icon} />
                                         </div>
@@ -21,7 +21,6 @@ export function Feature(){
                                             {item.description}
                                         </div>
                                     </div>
-
                                 )
                             })
                         }

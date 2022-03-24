@@ -16,7 +16,7 @@ export function Teams(){
                         {
                             teamLarge && teamLarge.map(item => {
                                 return(
-                                    <div className="team-item">
+                                    <div key={item.id} className="team-item">
                                         <img className="team-image-large" src={item.image} />
                                         <Link className="team-title team-title-large" to="/">{item.teamName}</Link>
                                     </div>

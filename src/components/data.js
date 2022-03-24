@@ -111,4 +111,25 @@ const feature = [
   },
 ];
 
-export { teams, feature };
+const review = [
+  {
+    id: 1,
+    name: "Lewis Hamilton",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint enim iure id praesentium, atque repudiandae minus quasi ut voluptatibus, delectus iusto ratione nostrum quos officia aspernatur doloremque aliquid dicta accusantium?",
+  },
+  {
+    id: 2,
+    name: "Max Verstappen",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint enim iure id praesentium, atque repudiandae minus quasi ut voluptatibus, delectus iusto ratione nostrum quos officia aspernatur doloremque aliquid dicta accusantium?",
+  },
+  {
+    id: 3,
+    name: "Alex Albon",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint enim iure id praesentium, atque repudiandae minus quasi ut voluptatibus, delectus iusto ratione nostrum quos officia aspernatur doloremque aliquid dicta accusantium?",
+  },
+];
+
+export { teams, feature, review };
