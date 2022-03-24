@@ -1,10 +1,13 @@
-@import url("../pages.css");
 @import url("https://infinityui.netlify.app/components/card/card.css");
 @import url("https://infinityui.netlify.app/components/slider/slider.css");
 @import url("/src/reset.css");
 
 * {
   font-family: "Raleway", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
 :root {
@@ -66,13 +69,14 @@
   flex-flow: column;
   padding: 1rem;
   gap: 1rem;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .filter-heading {
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 1rem;
   color: var(--primary-color);
   display: flex;
@@ -84,6 +88,7 @@
   font-size: 1rem;
   color: black;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .price-slider {
@@ -121,9 +126,9 @@
   grid-template-areas:
     "filter-title"
     "filter-list";
-  gap: 1rem;
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 1rem;
+  border-top: 2px solid var(--primary-color);
+  height: fit-content;
+  align-items: center;
 }
 
 .filter-item-closed {
@@ -134,8 +139,8 @@
     "filter-list";
   gap: 1rem;
   max-height: 4rem;
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 1rem;
+  border-top: 2px solid var(--primary-color);
+  align-items: center;
 }
 
 .filter-item-header {
@@ -161,6 +166,7 @@
   justify-content: center;
   align-items: center;
   font-size: 0.7rem;
+  cursor: pointer;
 }
 
 .filter-list {

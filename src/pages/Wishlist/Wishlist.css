@@ -1,7 +1,7 @@
 @import url("../../reset.css");
 @import url("../pages.css");
 
-@import url("../ProductListing/ProductListing.css");
+/* @import url("../ProductListing/ProductListing.css"); */
 
 .wishlist-container {
   display: grid;

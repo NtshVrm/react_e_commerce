@@ -1,12 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as heartOutline } from "@fortawesome/free-regular-svg-icons";
+import { faBagShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export function ProductCard({ item }) {
+  const [wishlist, setWishlist] = useState(false);
   return (
     <div className={`card-container ${item.badge ? "card-with-badge" : ""}`}>
-      <div className="wishlist">
-        <FontAwesomeIcon icon={faHeart} />
+      <div className="wishlist" onClick={() => setWishlist((prev) => !prev)}>
+        {wishlist ? (
+          <FontAwesomeIcon icon={faHeart} />
+        ) : (
+          <FontAwesomeIcon icon={heartOutline} />
+        )}
       </div>
       <div className="card-image">
         <img className="img" src={item.image} alt="img" />

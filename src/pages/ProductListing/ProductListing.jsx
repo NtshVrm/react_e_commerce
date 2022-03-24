@@ -1,4 +1,3 @@
-import "./ProductListing.css";
 import {
   FilterSidebar,
   ListingHeader,
@@ -31,8 +30,8 @@ export default function ProductListing() {
         <div className="listing-container">
           <FilterSidebar />
           <div className="card-listing-container">
-            {products.map((obj) => {
-              return <ProductCard item={obj} />;
+            {products.map((item) => {
+              return <ProductCard key={item.id} item={item} />;
             })}
           </div>
         </div>
