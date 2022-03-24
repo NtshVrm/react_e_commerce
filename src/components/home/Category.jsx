@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { f1_hoodie, cap, shirt } from "../../assets";
 import axios from "axios";
 
 export function Category(){
