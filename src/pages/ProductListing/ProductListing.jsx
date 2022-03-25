@@ -3,6 +3,7 @@ import {
   ListingHeader,
   Navbar,
   ProductCard,
+  Footer,
 } from "../../components";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -37,6 +38,7 @@ export default function ProductListing() {
             })}
           </div>
         </div>
+        <Footer />
       </main>
     </>
   );
