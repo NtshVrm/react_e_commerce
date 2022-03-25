@@ -10,7 +10,8 @@ export function ListingHeader() {
           <option value="popular" defaultChecked>
             Most Popular
           </option>
-          <option value="rating">Best Rating</option>
+          <option value="priceLowToHigh">Price: Low to High</option>
+          <option value="priceHighToLow">Price: High to Low</option>
           <option value="newest">Newest</option>
         </select>
       </label>

@@ -2,7 +2,6 @@ import {
   faArrowRightArrowLeft,
   faEarthAsia,
   faPercent,
-  faPercentage,
   faTruckFast,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -132,4 +131,67 @@ const review = [
   },
 ];
 
-export { teams, feature, review };
+const filterComp = [
+  {
+    id: 1,
+    filterClosed: false,
+    title: "Ratings",
+    options: [
+      {
+        val: "4 star and above",
+      },
+      {
+        val: "3 star and above",
+      },
+      {
+        val: "2 star and above",
+      },
+      {
+        val: "1 star and above",
+      },
+    ],
+    type: "radio",
+  },
+  {
+    id: 2,
+    filterClosed: false,
+    title: "Gender",
+    options: [
+      {
+        val: "Men",
+      },
+      {
+        val: "Women",
+      },
+      {
+        val: "Unisex",
+      },
+    ],
+    type: "checkbox",
+  },
+  {
+    id: 3,
+    filterClosed: false,
+    title: "Category",
+    options: [
+      {
+        val: "Caps",
+      },
+      {
+        val: "Hoodies",
+      },
+      {
+        val: "T-Shirts",
+      },
+      {
+        val: "Bags",
+      },
+      {
+        val: "Helmets",
+      },
+    ],
+    type: "checkbox",
+  },
+];
+
+export { teams, feature, review, filterComp };
