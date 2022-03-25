@@ -6,7 +6,9 @@ export function ListingHeader({ heading }) {
       <div className="listing-heading">{heading}</div>
       <label
         htmlFor="sort"
-        className={`sort-text ${heading === "Wishlist" ? "hidden" : ""}`}
+        className={`sort-text ${
+          heading === "Wishlist" || heading === "Cart" ? "hidden" : ""
+        }`}
       >
         Sort
         <select name="sort" id="sort" className="sort">

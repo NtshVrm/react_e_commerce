@@ -10,6 +10,11 @@ import { Banner } from "./home/Banner";
 import { ListingHeader } from "./productListing/ListingHeader";
 import { FilterSidebar } from "./productListing/FilterSidebar";
 import { ProductCard } from "./productListing/ProductCard";
+import { HorizontalCard } from "./cart/HorizontalCard";
+import { Address } from "./cart/Address";
+import { ShippingUpdate } from "./cart/ShippingUpdate";
+import { PaymentInfo } from "./cart/PaymentInfo";
+import { OrderSummary } from "./cart/OrderSummary";
 
 export {
   Navbar,
@@ -22,4 +27,9 @@ export {
   ListingHeader,
   FilterSidebar,
   ProductCard,
+  HorizontalCard,
+  Address,
+  ShippingUpdate,
+  PaymentInfo,
+  OrderSummary,
 };

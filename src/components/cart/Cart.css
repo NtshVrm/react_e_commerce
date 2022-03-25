@@ -1,10 +1,6 @@
 @import url("../../reset.css");
-/* @import url("../pages.css");
 
-@import url("../ProductListing/ProductListing.css");
-@import url("../Wishlist/Wishlist.css"); */
-
-::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -31,17 +27,8 @@
   align-items: center;
   padding: 0 1rem 1rem 1rem;
   gap: 2rem;
-  /* justify-content: space-between; */
   height: 100vh;
   overflow: scroll;
-}
-
-.card-title {
-  font-size: 1.5rem;
-}
-
-.card-info {
-  font-size: 1.3rem;
 }
 
 .card-price {
@@ -209,7 +196,7 @@
 
 .pricing-title {
   display: flex;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   justify-content: center;
   color: var(--primary-color);
@@ -219,7 +206,7 @@
 .pricing-breakdown {
   display: flex;
   flex-flow: column;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   gap: 1rem;
 }
 
@@ -275,4 +262,16 @@
   justify-content: space-between;
   width: 50%;
   cursor: pointer;
+}
+
+.move-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.filled {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
