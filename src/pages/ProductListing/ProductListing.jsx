@@ -31,7 +31,9 @@ export default function ProductListing() {
           <FilterSidebar />
           <div className="card-listing-container">
             {products.map((item) => {
-              return <ProductCard key={item.id} item={item} />;
+              return (
+                <ProductCard key={item.id} item={item} type="productListing" />
+              );
             })}
           </div>
         </div>

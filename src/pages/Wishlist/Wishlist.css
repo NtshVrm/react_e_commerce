@@ -28,7 +28,7 @@
 }
 
 .remove {
-  width: 50%;
+  /* width: 50%; */
   gap: 0.5rem;
   background-color: white;
   border: 2px solid var(--primary-color);
