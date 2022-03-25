@@ -19,6 +19,7 @@ export const products = [
     price: "99.99",
     discountPrice: "59.99",
     badge: true,
+    inCart: false,
   },
   {
     _id: uuid(),
@@ -28,6 +29,7 @@ export const products = [
     price: "149.99",
     discountPrice: "79.99",
     badge: false,
+    inCart: false,
   },
   {
     _id: uuid(),
@@ -37,5 +39,6 @@ export const products = [
     price: "49.99",
     discountPrice: "29.99",
     badge: false,
+    inCart: false,
   },
 ];

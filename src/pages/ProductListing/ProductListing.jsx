@@ -26,7 +26,7 @@ export default function ProductListing() {
     <>
       <Navbar />
       <main className="product-container">
-        <ListingHeader />
+        <ListingHeader heading="Products" />
         <div className="listing-container">
           <FilterSidebar />
           <div className="card-listing-container">

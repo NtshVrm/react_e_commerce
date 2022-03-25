@@ -1,10 +1,13 @@
 import "./ProductListing.css";
 
-export function ListingHeader() {
+export function ListingHeader({ heading }) {
   return (
     <div className="listing-header">
-      <div className="listing-heading">Products</div>
-      <label htmlFor="sort" className="sort-text">
+      <div className="listing-heading">{heading}</div>
+      <label
+        htmlFor="sort"
+        className={`sort-text ${heading === "Wishlist" ? "hidden" : ""}`}
+      >
         Sort
         <select name="sort" id="sort" className="sort">
           <option value="popular" defaultChecked>
