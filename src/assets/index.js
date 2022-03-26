@@ -23,7 +23,6 @@ import shirt from "./shirt.png";
 import sign_in from "./sign-in.jpg";
 import sign_up from "./sign-up.jpg";
 import williams from "./williams.png";
-import wishlist_page from "./wishlist-page.jpg";
 
 export {
   alfa,
@@ -51,5 +50,4 @@ export {
   sign_in,
   sign_up,
   williams,
-  wishlist_page,
 };
