@@ -1,4 +1,4 @@
-import "./Wishlist.css";
+import "../../components/wishlist/Wishlist.css";
 import { Footer, ListingHeader, Navbar, ProductCard } from "../../components";
 import axios from "axios";
 import { useState, useEffect } from "react";
