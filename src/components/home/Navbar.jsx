@@ -12,10 +12,6 @@ export function Navbar() {
   return (
     <header className="navbar">
       <div className="nav-brand">
-        <img
-          className="nav-logo hidden"
-          src="https://picsum.photos/1000/400"
-        ></img>
         <Link className="home-link" to="/Home">
           <div className="nav-name">SlipStream</div>
         </Link>
