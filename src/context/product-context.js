@@ -8,11 +8,9 @@ const ProductProvider = ({ children }) => {
     products: [],
     sortBy: "popular",
     gender: null,
-    category: null,
+    category: [],
     rating: null,
   });
-
-  console.log(state.category);
 
   function getSortedData(productsList, sortBy) {
     switch (sortBy) {
@@ -68,11 +66,20 @@ const ProductProvider = ({ children }) => {
     }
   }
 
+  function getFilterCategory(productsList, category) {
+    if (category.length > 0) {
+      return productsList.filter((item) => category.includes(item.category));
+      s;
+    }
+    return productsList;
+  }
+
   const sortedData = getSortedData(state.products, state.sortBy);
   const ratingData = getFilterRating(sortedData, state.rating);
   const genderData = getFilterGender(ratingData, state.gender);
+  const categoryData = getFilterCategory(genderData, state.category);
 
-  const finalData = genderData;
+  const finalData = categoryData;
 
   return (
     <ProductContext.Provider value={{ finalData, dispatch }}>

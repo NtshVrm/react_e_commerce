@@ -12,7 +12,15 @@ const productReducer = (state, action) => {
           return { ...state, gender: action.filterType };
         }
         case "Category": {
-          return { ...state, category: action.filterType };
+          const tempCategory = state.category.includes(action.filterType);
+          return tempCategory
+            ? {
+                ...state,
+                category: state.category.filter((item) => {
+                  return item !== action.filterType;
+                }),
+              }
+            : { ...state, category: [...state.category, action.filterType] };
         }
         case "Rating": {
           return { ...state, rating: action.filterType };
