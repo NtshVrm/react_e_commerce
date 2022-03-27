@@ -7,13 +7,17 @@ import { useProduct } from "../../context/product-context";
 export function FilterSidebar() {
   const { dispatch } = useProduct();
   const [filterOptions, setfilterOptions] = useState(filterComp);
-
   return (
     <>
-      <div className="filter-container">
+      <form className="filter-container">
         <div className="filter-heading">
           <div>Filters</div>
-          <div className="clear" onClick={() => dispatch({ type: "CLEAR" })}>
+          <div
+            className="clear"
+            onClick={() => {
+              dispatch({ type: "CLEAR" });
+            }}
+          >
             Clear
           </div>
         </div>
@@ -81,7 +85,7 @@ export function FilterSidebar() {
             </div>
           );
         })}
-      </div>
+      </form>
     </>
   );
 }
