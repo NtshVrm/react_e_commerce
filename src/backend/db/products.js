@@ -38,6 +38,7 @@ export const products = [
     badge: false,
     category: "helmet",
     gender: "unisex",
+    rating: 4.5,
   },
   {
     _id: uuid(),
@@ -49,6 +50,7 @@ export const products = [
     badge: false,
     category: "helmet",
     gender: "unisex",
+    rating: 3.5,
   },
   {
     _id: uuid(),
@@ -60,6 +62,7 @@ export const products = [
     badge: true,
     category: "helmet",
     gender: "unisex",
+    rating: 2.5,
   },
   {
     _id: uuid(),
@@ -71,6 +74,7 @@ export const products = [
     badge: false,
     category: "helmet",
     gender: "unisex",
+    rating: 1.5,
   },
   {
     _id: uuid(),
@@ -82,6 +86,7 @@ export const products = [
     badge: false,
     category: "hoodie",
     gender: "male",
+    rating: 4.5,
   },
   {
     _id: uuid(),
@@ -93,6 +98,7 @@ export const products = [
     badge: true,
     category: "hoodie",
     gender: "male",
+    rating: 3.5,
   },
   {
     _id: uuid(),
@@ -104,6 +110,7 @@ export const products = [
     badge: false,
     category: "hoodie",
     gender: "male",
+    rating: 2.5,
   },
   {
     _id: uuid(),
@@ -115,6 +122,7 @@ export const products = [
     badge: false,
     category: "hoodie",
     gender: "male",
+    rating: 1.5,
   },
   {
     _id: uuid(),
@@ -126,6 +134,7 @@ export const products = [
     badge: false,
     category: "cap",
     gender: "unisex",
+    rating: 4.5,
   },
   {
     _id: uuid(),
@@ -137,6 +146,7 @@ export const products = [
     badge: true,
     category: "cap",
     gender: "unisex",
+    rating: 3.5,
   },
   {
     _id: uuid(),
@@ -148,6 +158,7 @@ export const products = [
     badge: false,
     category: "cap",
     gender: "unisex",
+    rating: 2.5,
   },
   {
     _id: uuid(),
@@ -159,6 +170,7 @@ export const products = [
     badge: false,
     category: "cap",
     gender: "unisex",
+    rating: 1.5,
   },
   {
     _id: uuid(),
@@ -170,6 +182,7 @@ export const products = [
     badge: true,
     category: "shirt",
     gender: "male",
+    rating: 4.5,
   },
   {
     _id: uuid(),
@@ -181,6 +194,7 @@ export const products = [
     badge: false,
     category: "shirt",
     gender: "male",
+    rating: 3.5,
   },
   {
     _id: uuid(),
@@ -192,6 +206,7 @@ export const products = [
     badge: false,
     category: "shirt",
     gender: "male",
+    rating: 2.5,
   },
   {
     _id: uuid(),
@@ -203,6 +218,7 @@ export const products = [
     badge: true,
     category: "shirt",
     gender: "female",
+    rating: 1.5,
   },
   {
     _id: uuid(),
@@ -214,6 +230,7 @@ export const products = [
     badge: false,
     category: "shirt",
     gender: "female",
+    rating: 2.5,
   },
   {
     _id: uuid(),
@@ -225,6 +242,7 @@ export const products = [
     badge: true,
     category: "bag",
     gender: "unisex",
+    rating: 4.5,
   },
   {
     _id: uuid(),
@@ -236,6 +254,7 @@ export const products = [
     badge: false,
     category: "bag",
     gender: "unisex",
+    rating: 3.5,
   },
   {
     _id: uuid(),
@@ -247,5 +266,6 @@ export const products = [
     badge: false,
     category: "bag",
     gender: "unisex",
+    rating: 2.5,
   },
 ];

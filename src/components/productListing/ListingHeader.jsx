@@ -1,6 +1,10 @@
 import "./ProductListing.css";
+import { useState } from "react";
+import { useProduct } from "../../context/product-context";
 
 export function ListingHeader({ heading }) {
+  const { dispatch } = useProduct();
+
   return (
     <div className="listing-header">
       <div className="listing-heading">{heading}</div>
@@ -11,7 +15,14 @@ export function ListingHeader({ heading }) {
         }`}
       >
         Sort
-        <select name="sort" id="sort" className="sort">
+        <select
+          name="sort"
+          id="sort"
+          className="sort"
+          onChange={(event) =>
+            dispatch({ type: "SORT", payload: event.target.value })
+          }
+        >
           <option value="popular" defaultChecked>
             Most Popular
           </option>
