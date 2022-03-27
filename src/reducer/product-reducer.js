@@ -1,4 +1,5 @@
 const productReducer = (state, action) => {
+  const initial = state;
   switch (action.type) {
     case "DATA": {
       return { ...state, products: action.payload };
@@ -26,6 +27,15 @@ const productReducer = (state, action) => {
           return { ...state, rating: action.filterType };
         }
       }
+    }
+    case "CLEAR": {
+      return {
+        ...state,
+        sortBy: "popular",
+        gender: "",
+        category: [],
+        rating: "",
+      };
     }
     default:
       return state;

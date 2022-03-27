@@ -13,7 +13,9 @@ export function FilterSidebar() {
       <div className="filter-container">
         <div className="filter-heading">
           <div>Filters</div>
-          <div className="clear">Clear</div>
+          <div className="clear" onClick={() => dispatch({ type: "CLEAR" })}>
+            Clear
+          </div>
         </div>
 
         <div className="filter-item item-rating">
