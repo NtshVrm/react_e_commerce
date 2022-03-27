@@ -62,7 +62,7 @@ export function FilterSidebar() {
                     <div className="filter-option">
                       <input
                         type={item.type}
-                        name="sort"
+                        name={item.title}
                         onChange={(event) => {
                           dispatch({
                             type: "FILTER",

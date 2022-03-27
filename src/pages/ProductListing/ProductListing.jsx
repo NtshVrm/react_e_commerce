@@ -52,10 +52,6 @@ export default function ProductListing() {
   //   .map((item) => item)
   //   .filter((item) => item.category === "helmet");
 
-  const { option, setOption } = useProduct();
-
-  console.log(option);
-
   return (
     <>
       <Navbar />
