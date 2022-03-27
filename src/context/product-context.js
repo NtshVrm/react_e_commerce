@@ -69,7 +69,6 @@ const ProductProvider = ({ children }) => {
   function getFilterCategory(productsList, category) {
     if (category.length > 0) {
       return productsList.filter((item) => category.includes(item.category));
-      s;
     }
     return productsList;
   }
