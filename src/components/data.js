@@ -135,7 +135,7 @@ const filterComp = [
   {
     id: 1,
     filterClosed: false,
-    title: "Ratings",
+    title: "Rating",
     options: [
       {
         val: "4 star and above",
@@ -167,7 +167,7 @@ const filterComp = [
         val: "Unisex",
       },
     ],
-    type: "checkbox",
+    type: "radio",
   },
   {
     id: 3,

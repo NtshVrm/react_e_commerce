@@ -1,5 +1,4 @@
 import "./ProductListing.css";
-import { useState } from "react";
 import { useProduct } from "../../context/product-context";
 
 export function ListingHeader({ heading }) {

@@ -2,8 +2,10 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { filterComp } from "../data";
+import { useProduct } from "../../context/product-context";
 
 export function FilterSidebar() {
+  const { dispatch } = useProduct();
   const [filterOptions, setfilterOptions] = useState(filterComp);
 
   return (
@@ -58,7 +60,17 @@ export function FilterSidebar() {
                 {item.options.map((obj) => {
                   return (
                     <div className="filter-option">
-                      <input type={item.type} name="sort" />
+                      <input
+                        type={item.type}
+                        name="sort"
+                        onChange={(event) => {
+                          dispatch({
+                            type: "FILTER",
+                            payload: item.title,
+                            filterType: obj.val,
+                          });
+                        }}
+                      />
                       <label>{obj.val}</label>
                     </div>
                   );

@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { useProduct } from "../../context/product-context";
 
 export default function ProductListing() {
-  const { sortedData, dispatch } = useProduct();
+  const { finalData, dispatch } = useProduct();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function ProductListing() {
         <div className="listing-container">
           <FilterSidebar />
           <div className="card-listing-container">
-            {sortedData.map((item) => {
+            {finalData.map((item) => {
               return (
                 <ProductCard key={item.id} item={item} type="productListing" />
               );
