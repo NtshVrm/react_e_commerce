@@ -5,6 +5,7 @@ import {
   getFilterRating,
   getFilterGender,
   getFilterCategory,
+  getFilterRange,
 } from "../utils/product-utils";
 
 const ProductContext = createContext(null);
@@ -16,15 +17,16 @@ const ProductProvider = ({ children }) => {
     gender: null,
     category: [],
     rating: null,
-    checked: false,
+    range_sort: null,
   });
 
   const sortedData = getSortedData(state.products, state.sortBy);
   const ratingData = getFilterRating(sortedData, state.rating);
   const genderData = getFilterGender(ratingData, state.gender);
   const categoryData = getFilterCategory(genderData, state.category);
+  const rangeData = getFilterRange(categoryData, state.range_sort);
 
-  const finalData = categoryData;
+  const finalData = rangeData;
 
   return (
     <ProductContext.Provider value={{ finalData, dispatch }}>

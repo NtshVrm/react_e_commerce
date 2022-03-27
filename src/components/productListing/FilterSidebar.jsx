@@ -7,6 +7,7 @@ import { useProduct } from "../../context/product-context";
 export function FilterSidebar() {
   const { dispatch } = useProduct();
   const [filterOptions, setfilterOptions] = useState(filterComp);
+  const [price, setPrice] = useState(300);
   return (
     <>
       <form className="filter-container">
@@ -24,11 +25,20 @@ export function FilterSidebar() {
 
         <div className="filter-item item-rating">
           <div className="filter-item-header">
-            <div className="filter-title">Price</div>
+            <div className="filter-title">Price: 0 to {price}</div>
           </div>
 
           <div className="price-slider">
-            <input type="range" min="$10" max="$100" className="slider" />
+            <input
+              type="range"
+              min="0"
+              max="300"
+              className="slider"
+              onChange={(event) => {
+                setPrice(event.target.value);
+                dispatch({ type: "RANGE_SORT", payload: event.target.value });
+              }}
+            />
           </div>
         </div>
 

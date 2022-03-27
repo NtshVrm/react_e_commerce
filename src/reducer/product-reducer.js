@@ -28,6 +28,9 @@ const productReducer = (state, action) => {
         }
       }
     }
+    case "RANGE_SORT": {
+      return { ...state, range_sort: action.payload };
+    }
     case "CLEAR": {
       return {
         ...state,

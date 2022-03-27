@@ -156,8 +156,9 @@
 
 .filter-title {
   grid-area: filter-title;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .filter-icon {

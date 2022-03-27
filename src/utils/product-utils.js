@@ -59,4 +59,19 @@ function getFilterCategory(productsList, category) {
   return productsList;
 }
 
-export { getFilterCategory, getFilterGender, getFilterRating, getSortedData };
+function getFilterRange(productsList, range_sort) {
+  if (range_sort) {
+    return productsList.filter(
+      (item) => parseInt(item.discountPrice) <= range_sort
+    );
+  }
+  return productsList;
+}
+
+export {
+  getFilterCategory,
+  getFilterGender,
+  getFilterRating,
+  getSortedData,
+  getFilterRange,
+};
