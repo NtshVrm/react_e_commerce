@@ -52,36 +52,15 @@ export default function Signup() {
 
           <div className="social-input">
             <div className="input">
-              <input
-                type="text"
-                ref={first_name}
-                className="text-input"
-                // onChange={(event) => {
-                //   updateForm(event, "firstName");
-                // }}
-              />
+              <input type="text" ref={first_name} className="text-input" />
               <label className="input-label">First Name</label>
             </div>
             <div className="input">
-              <input
-                type="text"
-                ref={last_name}
-                className="text-input"
-                // onChange={(event) => {
-                //   updateForm(event, "lastName");
-                // }}
-              />
+              <input type="text" ref={last_name} className="text-input" />
               <label className="input-label">Last Name</label>
             </div>
             <div className="input">
-              <input
-                type="text"
-                ref={user_email}
-                className="text-input"
-                // onChange={(event) => {
-                //   updateForm(event, "email");
-                // }}
-              />
+              <input type="text" ref={user_email} className="text-input" />
               <label className="input-label">Email</label>
             </div>
             <div className="input">
@@ -89,9 +68,6 @@ export default function Signup() {
                 type="password"
                 ref={user_password}
                 className="text-input"
-                // onChange={(event) => {
-                //   updateForm(event, "password");
-                // }}
               />
               <label className="input-label">Password</label>
             </div>
