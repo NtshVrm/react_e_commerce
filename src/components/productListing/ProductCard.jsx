@@ -37,6 +37,7 @@ export function ProductCard({ item, type }) {
       </div>
       <div className="card-description">
         <div className="card-title">{item.title}</div>
+        <div className="card-title">Rating: {item.rating}</div>
         <div className="card-price">
           ${item.discountPrice}
           <del className="card-price-discount">${item.price}</del>

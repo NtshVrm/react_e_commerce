@@ -7,8 +7,10 @@ import {
 } from "../../components";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useProduct } from "../../context/product-context";
 
 export default function ProductListing() {
+  const { finalData, dispatch } = useProduct();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -16,6 +18,7 @@ export default function ProductListing() {
       try {
         const output = await axios.get("/api/products");
         setProducts(output.data.products);
+        dispatch({ type: "DATA", payload: output.data.products });
       } catch (error) {
         console.log("Could not fetch products", error);
       }
@@ -31,11 +34,16 @@ export default function ProductListing() {
         <div className="listing-container">
           <FilterSidebar />
           <div className="card-listing-container">
-            {products.map((item) => {
-              return (
-                <ProductCard key={item.id} item={item} type="productListing" />
-              );
-            })}
+            {finalData &&
+              finalData.map((item) => {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    item={item}
+                    type="productListing"
+                  />
+                );
+              })}
           </div>
         </div>
         <Footer />

@@ -10,8 +10,8 @@
 }
 
 .card-listing-container {
-  padding: 1rem;
   height: 100vh;
+  overflow: scroll;
 }
 
 .wishlist {
