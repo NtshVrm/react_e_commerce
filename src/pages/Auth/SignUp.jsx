@@ -5,8 +5,6 @@ import "./Auth.css";
 import { useAuth } from "../../context/auth-context";
 
 export default function Signup() {
-  // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI0MDM5NTJkYS1jYjgyLTQ5ZDMtOGI1Yi0zNDlkNDgyNjBmMGEiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.DMbsBZeaAbbOd2IaMT5-IQa7oAvppYWl0I-DVjbju5g"
-
   const first_name = useRef("");
   const last_name = useRef("");
   const user_email = useRef("");
