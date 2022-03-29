@@ -8,6 +8,7 @@ import {
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useProduct } from "../../context/product-context";
+import { useAuth } from "../../context/auth-context.js";
 
 export default function ProductListing() {
   const { finalData, dispatch } = useProduct();

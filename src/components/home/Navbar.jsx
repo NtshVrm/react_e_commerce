@@ -59,6 +59,7 @@ export function Navbar() {
             to="/"
             onClick={() => {
               localStorage.removeItem("login");
+              setTokenState(false);
               setTimeout(() => {
                 alert("You have logged out!");
                 navigate("/Signin");
