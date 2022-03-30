@@ -141,12 +141,32 @@
   margin: 0.5rem 0 0.5rem 0;
   border-radius: 0.5rem;
 }
+
+.test-button {
+  width: 60%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
 .no-account {
   display: flex;
   width: 100%;
   justify-content: center;
   gap: 1rem;
   /* text-transform: uppercase; */
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .sign-up-link {

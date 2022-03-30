@@ -134,6 +134,15 @@ main {
 .icon {
   text-decoration: none;
   color: var(--primary-color);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.icon > label {
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .icon:hover {
