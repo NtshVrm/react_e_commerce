@@ -2,21 +2,33 @@ import "../../components/wishlist/Wishlist.css";
 import { Footer, ListingHeader, Navbar, ProductCard } from "../../components";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useProduct } from "../../context/product-context";
+import { useAuth } from "../../context/auth-context";
 
 export default function Wishlist() {
-  const [wishlistItems, setWishlistItems] = useState([]);
+  const { wishlistFetch, setWishlistFetch, wishlist } = useProduct();
+  const { token, tokenState, setTokenState, user } = useAuth();
+
+  setWishlistFetch(wishlist);
+  console.log(wishlistFetch);
 
   useEffect(() => {
-    async function getWishlistItems() {
-      try {
-        const output = await axios.get("/api/products");
-        setWishlistItems(output.data.products);
-      } catch (error) {
-        console.log("Could not fetch products", error);
-      }
-    }
-    getWishlistItems();
-  }, []);
+    localStorage.getItem("login") ? setTokenState(true) : setTokenState(false);
+  });
+
+  const wishlistSize = wishlistFetch.length > 0;
+
+  // useEffect(() => {
+  //   async function getWishlistItems() {
+  //     try {
+  //       const output = await axios.get("/api/products");
+  //       setWishlistItems(output.data.products);
+  //     } catch (error) {
+  //       console.log("Could not fetch products", error);
+  //     }
+  //   }
+  //   getWishlistItems();
+  // }, []);
 
   return (
     <>
@@ -26,9 +38,17 @@ export default function Wishlist() {
 
         <div className="wishlist-items">
           <div className="card-listing-container">
-            {wishlistItems.map((item) => {
-              return <ProductCard key={item.id} item={item} type="wishlist" />;
-            })}
+            {tokenState && wishlistSize ? (
+              <>
+                {wishlistFetch.map((item) => {
+                  return (
+                    <ProductCard key={item.id} item={item} type="wishlist" />
+                  );
+                })}
+              </>
+            ) : (
+              <h1>Wishlist is Empty</h1>
+            )}
           </div>
         </div>
         <Footer />

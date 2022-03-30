@@ -19,9 +19,11 @@ const ProductProvider = ({ children }) => {
     rating: null,
     range_sort: null,
     cart: [],
+    wishlist: [],
   });
 
   const [cartFetch, setCartFetch] = useState(state.cart);
+  const [wishlistFetch, setWishlistFetch] = useState(state.wishlist);
   const sortedData = getSortedData(state.products, state.sortBy);
   const ratingData = getFilterRating(sortedData, state.rating);
   const genderData = getFilterGender(ratingData, state.gender);
@@ -32,7 +34,16 @@ const ProductProvider = ({ children }) => {
 
   return (
     <ProductContext.Provider
-      value={{ finalData, dispatch, cart: state.cart, cartFetch, setCartFetch }}
+      value={{
+        finalData,
+        dispatch,
+        cart: state.cart,
+        wishlist: state.wishlist,
+        cartFetch,
+        setCartFetch,
+        wishlistFetch,
+        setWishlistFetch,
+      }}
     >
       {children}
     </ProductContext.Provider>

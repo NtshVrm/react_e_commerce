@@ -49,6 +49,12 @@ const productReducer = (state, action) => {
     case "QUANTITY": {
       return { ...state, cart: [...action.payload] };
     }
+    case "ADD_TO_WISHLIST": {
+      return { ...state, wishlist: [...action.payload] };
+    }
+    case "REMOVE_FROM_WISHLIST": {
+      return { ...state, wishlist: [...action.payload] };
+    }
     default:
       return state;
   }

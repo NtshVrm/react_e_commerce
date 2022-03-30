@@ -1,18 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as heartOutline } from "@fortawesome/free-regular-svg-icons";
+import {
+  faHeart as heartOutline,
+  faTimesCircle,
+} from "@fortawesome/free-regular-svg-icons";
 import { faBagShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/auth-context";
 import { useNavigate } from "react-router-dom";
 import { useProduct } from "../../context/product-context";
-// import { addToCartUtil } from "../../utils/cart-utils.js";
 import axios from "axios";
 
 export function ProductCard({ item, type }) {
-  const [wishlist, setWishlist] = useState(false);
+  // set wishlist use state
   const [cartStatus, setcartStatus] = useState(false);
   const navigate = useNavigate();
-  const { cart, dispatch } = useProduct();
+  const { cart, dispatch, wishlist, setWishlistFetch } = useProduct();
 
   const { token, tokenState, setTokenState, user } = useAuth();
 
@@ -24,7 +26,7 @@ export function ProductCard({ item, type }) {
 
   const inCart = cart?.find((obj) => obj._id === _id);
 
-  // console.log(inCart);
+  const inWishlist = wishlist?.find((obj) => obj._id === _id);
 
   async function addToCartUtil(dispatch, product, login) {
     try {
@@ -48,11 +50,60 @@ export function ProductCard({ item, type }) {
     }
   }
 
+  async function addToWishlistUtil(dispatch, product, login) {
+    try {
+      const {
+        data: { wishlist },
+      } = await axios.post(
+        "/api/user/wishlist",
+        {
+          product,
+        },
+        {
+          headers: {
+            authorization: login,
+          },
+        }
+      );
+
+      dispatch({ type: "ADD_TO_WISHLIST", payload: wishlist });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function removeFromWishlist(id, dispatch, token) {
+    try {
+      const {
+        data: { wishlist },
+      } = await axios.delete(`/api/user/wishlist/${id}`, {
+        headers: {
+          authorization: token,
+        },
+      });
+      dispatch({ type: "REMOVE_FROM_WISHLIST", payload: wishlist });
+      setWishlistFetch(wishlist);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   function cartHandler() {
     localStorage.getItem("login")
       ? inCart
         ? navigate("/Cart")
         : addToCartUtil(dispatch, item, token)
+      : setTimeout(() => {
+          alert("Please Login First");
+          navigate("/Signin");
+        }, 100);
+  }
+
+  function wishlistHandler() {
+    localStorage.getItem("login")
+      ? inWishlist
+        ? navigate("/Wishlist")
+        : addToWishlistUtil(dispatch, item, token)
       : setTimeout(() => {
           alert("Please Login First");
           navigate("/Signin");
@@ -65,21 +116,19 @@ export function ProductCard({ item, type }) {
         item.badge && type === "productListing" ? "card-with-badge" : ""
       }`}
     >
-      <div
-        className="wishlist"
-        onClick={() => {
-          setWishlist((prev) => !prev);
-        }}
-      >
-        {wishlist ? (
+      <div className="wishlist" onClick={() => wishlistHandler()}>
+        {tokenState && inWishlist ? (
           <FontAwesomeIcon icon={faHeart} />
         ) : (
           <FontAwesomeIcon icon={heartOutline} />
         )}
       </div>
       {type === "wishlist" ? (
-        <div className="delete">
-          <i className="far fa-times-circle"></i>
+        <div
+          className="delete"
+          onClick={() => removeFromWishlist(item._id, dispatch, token)}
+        >
+          <FontAwesomeIcon icon={faTimesCircle} />
         </div>
       ) : (
         ""
