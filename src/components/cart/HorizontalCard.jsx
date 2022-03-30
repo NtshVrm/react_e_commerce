@@ -10,6 +10,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useProduct } from "../../context/product-context";
 import { useAuth } from "../../context/auth-context";
+import { addToWishlistUtil } from "../../utils/wishlist-util";
+import { removeFromCart, quantityHandler } from "../../utils/cart-util";
 
 export function HorizontalCard({ item }) {
   const { cart, dispatch, setCartFetch, wishlist, setWishlistFetch } =
@@ -18,69 +20,6 @@ export function HorizontalCard({ item }) {
   const { _id } = item;
 
   const inWishlist = wishlist?.find((obj) => obj._id === _id);
-
-  async function removeFromCart(id, dispatch, token) {
-    try {
-      const {
-        data: { cart },
-      } = await axios.delete(`/api/user/cart/${id}`, {
-        headers: {
-          authorization: token,
-        },
-      });
-      dispatch({ type: "REMOVE_FROM_CART", payload: cart });
-      setCartFetch(cart);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function quantityHandler(id, dispatch, token, type) {
-    try {
-      const {
-        data: { cart },
-      } = await axios.post(
-        `/api/user/cart/${id}`,
-        {
-          action: {
-            type: type,
-          },
-        },
-        {
-          headers: {
-            authorization: token,
-          },
-        }
-      );
-
-      dispatch({ type: "QUANTITY", payload: cart });
-      console.log(cart);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function addToWishlistUtil(dispatch, product, login) {
-    try {
-      const {
-        data: { wishlist },
-      } = await axios.post(
-        "/api/user/wishlist",
-        {
-          product,
-        },
-        {
-          headers: {
-            authorization: login,
-          },
-        }
-      );
-
-      dispatch({ type: "ADD_TO_WISHLIST", payload: wishlist });
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   function moveHandler() {
     removeFromCart(item._id, dispatch, token);
