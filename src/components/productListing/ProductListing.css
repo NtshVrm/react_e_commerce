@@ -54,12 +54,12 @@
   border: 3px solid var(--primary-color);
   border-radius: 2rem;
   padding: 0.3rem;
-  background-color: white;
+  background-color: var(--secondary-color);
   font-size: 1.5rem;
 }
 
 .listing-container {
-  background-color: white;
+  background-color: var(--secondary-color);
   grid-area: listing-container;
   display: grid;
   grid-template-columns: 1fr 5fr;
