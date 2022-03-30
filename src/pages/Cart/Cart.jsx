@@ -10,7 +10,6 @@ import {
 } from "../../components";
 import "../../components/cart/Cart.css";
 
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { useProduct } from "../../context/product-context.js";
 import { useAuth } from "../../context/auth-context.js";
