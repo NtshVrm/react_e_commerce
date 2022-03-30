@@ -24,8 +24,6 @@ export function ProductCard({ item, type }) {
 
   const inCart = cart?.find((obj) => obj._id === _id);
 
-  // console.log(inCart);
-
   async function addToCartUtil(dispatch, product, login) {
     try {
       const {
@@ -99,10 +97,7 @@ export function ProductCard({ item, type }) {
       <div className="add-to-cart">
         <button
           className={`card-button ${tokenState && inCart ? "remove" : ""}`}
-          onClick={() =>
-            // setcartStatus((prev) => !prev)
-            cartHandler()
-          }
+          onClick={() => cartHandler()}
         >
           <FontAwesomeIcon icon={faBagShopping} />
           {tokenState && inCart ? "Go to Bag" : "Add to Bag"}
