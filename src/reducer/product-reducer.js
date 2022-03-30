@@ -40,6 +40,15 @@ const productReducer = (state, action) => {
         rating: "",
       };
     }
+    case "ADD_TO_CART": {
+      return { ...state, cart: [...action.payload] };
+    }
+    case "REMOVE_FROM_CART": {
+      return { ...state, cart: [...action.payload] };
+    }
+    case "QUANTITY": {
+      return { ...state, cart: [...action.payload] };
+    }
     default:
       return state;
   }

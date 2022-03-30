@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import { productReducer } from "../reducer/product-reducer";
 import {
   getSortedData,
@@ -18,8 +18,10 @@ const ProductProvider = ({ children }) => {
     category: [],
     rating: null,
     range_sort: null,
+    cart: [],
   });
 
+  const [cartFetch, setCartFetch] = useState(state.cart);
   const sortedData = getSortedData(state.products, state.sortBy);
   const ratingData = getFilterRating(sortedData, state.rating);
   const genderData = getFilterGender(ratingData, state.gender);
@@ -29,7 +31,9 @@ const ProductProvider = ({ children }) => {
   const finalData = rangeData;
 
   return (
-    <ProductContext.Provider value={{ finalData, dispatch }}>
+    <ProductContext.Provider
+      value={{ finalData, dispatch, cart: state.cart, cartFetch, setCartFetch }}
+    >
       {children}
     </ProductContext.Provider>
   );

@@ -12,21 +12,22 @@ import "../../components/cart/Cart.css";
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useProduct } from "../../context/product-context.js";
+import { useAuth } from "../../context/auth-context.js";
 
 export default function Cart() {
-  const [products, setProducts] = useState([]);
+  const { cart, cartFetch, setCartFetch } = useProduct();
+  const { token, tokenState, setTokenState, user } = useAuth();
+
+  setCartFetch(cart);
+  console.log(cartFetch);
 
   useEffect(() => {
-    async function getProducts() {
-      try {
-        const output = await axios.get("/api/products");
-        setProducts(output.data.products);
-      } catch (error) {
-        console.log("Could not fetch products", error);
-      }
-    }
-    getProducts();
-  }, []);
+    localStorage.getItem("login") ? setTokenState(true) : setTokenState(false);
+  });
+
+  const cartSize = cartFetch.length > 0;
+
   return (
     <>
       <Navbar />
@@ -35,9 +36,15 @@ export default function Cart() {
 
         <div className="cart-items">
           <div className="cart-cards">
-            {products.map((item) => {
-              return <HorizontalCard key={item.id} item={item} />;
-            })}
+            {tokenState && cartSize ? (
+              <>
+                {cartFetch.map((item) => {
+                  return <HorizontalCard key={item.id} item={item} />;
+                })}
+              </>
+            ) : (
+              <h1>Cart is empty</h1>
+            )}
           </div>
 
           <div className="cart-summary">
