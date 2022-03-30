@@ -18,18 +18,6 @@ export default function Wishlist() {
 
   const wishlistSize = wishlistFetch.length > 0;
 
-  // useEffect(() => {
-  //   async function getWishlistItems() {
-  //     try {
-  //       const output = await axios.get("/api/products");
-  //       setWishlistItems(output.data.products);
-  //     } catch (error) {
-  //       console.log("Could not fetch products", error);
-  //     }
-  //   }
-  //   getWishlistItems();
-  // }, []);
-
   return (
     <>
       <Navbar />

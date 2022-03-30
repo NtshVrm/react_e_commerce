@@ -16,8 +16,6 @@ import {
 import { addToCartUtil } from "../../utils/cart-util";
 
 export function ProductCard({ item, type }) {
-  // set wishlist use state
-  const [cartStatus, setcartStatus] = useState(false);
   const navigate = useNavigate();
   const { cart, dispatch, wishlist, setWishlistFetch } = useProduct();
 
@@ -93,10 +91,7 @@ export function ProductCard({ item, type }) {
       <div className="add-to-cart">
         <button
           className={`card-button ${tokenState && inCart ? "remove" : ""}`}
-          onClick={() =>
-            // setcartStatus((prev) => !prev)
-            cartHandler()
-          }
+          onClick={() => cartHandler()}
         >
           <FontAwesomeIcon icon={faBagShopping} />
           {tokenState && inCart ? "Go to Bag" : "Add to Bag"}
