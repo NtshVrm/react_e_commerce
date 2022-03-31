@@ -10,13 +10,12 @@ import {
 } from "../../components";
 import "../../components/cart/Cart.css";
 
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { useProduct } from "../../context/product-context.js";
 import { useAuth } from "../../context/auth-context.js";
 
 export default function Cart() {
-  const { cart, cartFetch, setCartFetch } = useProduct();
+  const { cart, cartFetch, setCartFetch, dispatch } = useProduct();
   const { token, tokenState, setTokenState, user } = useAuth();
 
   setCartFetch(cart);

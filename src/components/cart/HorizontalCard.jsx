@@ -10,53 +10,20 @@ import axios from "axios";
 import { useState } from "react";
 import { useProduct } from "../../context/product-context";
 import { useAuth } from "../../context/auth-context";
+import { addToWishlistUtil } from "../../utils/wishlist-util";
+import { removeFromCart, quantityHandler } from "../../utils/cart-util";
 
 export function HorizontalCard({ item }) {
-  const [wishlistStatus, setwishlistStatus] = useState(false);
-
-  const { cart, dispatch, setCartFetch } = useProduct();
+  const { cart, dispatch, setCartFetch, wishlist, setWishlistFetch } =
+    useProduct();
   const { token } = useAuth();
   const { _id } = item;
 
-  async function removeFromCart(id, dispatch, token) {
-    try {
-      const {
-        data: { cart },
-      } = await axios.delete(`/api/user/cart/${id}`, {
-        headers: {
-          authorization: token,
-        },
-      });
-      dispatch({ type: "REMOVE_FROM_CART", payload: cart });
-      setCartFetch(cart);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const inWishlist = wishlist?.find((obj) => obj._id === _id);
 
-  async function quantityHandler(id, dispatch, token, type) {
-    try {
-      const {
-        data: { cart },
-      } = await axios.post(
-        `/api/user/cart/${id}`,
-        {
-          action: {
-            type: type,
-          },
-        },
-        {
-          headers: {
-            authorization: token,
-          },
-        }
-      );
-
-      dispatch({ type: "QUANTITY", payload: cart });
-      console.log(cart);
-    } catch (error) {
-      console.log(error);
-    }
+  function moveHandler() {
+    removeFromCart(item._id, dispatch, token);
+    addToWishlistUtil(dispatch, item, token);
   }
 
   return (
@@ -95,15 +62,16 @@ export function HorizontalCard({ item }) {
             </button>
           </div>
           <button
-            className={`move-button ${wishlistStatus ? "" : "filled"}`}
-            onClick={() => setwishlistStatus((prev) => !prev)}
+            className={`move-button ${inWishlist ? "" : "filled"}`}
+            onClick={() => moveHandler()}
+            disabled={inWishlist ? true : false}
           >
-            {wishlistStatus ? (
+            {inWishlist ? (
               <FontAwesomeIcon icon={faCheckCircle} />
             ) : (
               <FontAwesomeIcon icon={faArrowAltCircleRight} />
             )}
-            {wishlistStatus ? "Added to Wishlist" : "Move to Wishlist"}
+            {inWishlist ? "Added to Wishlist" : "Move to Wishlist"}
           </button>
         </div>
       </div>
