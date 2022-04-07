@@ -1,4 +1,6 @@
 <div align="center">
+  
+ <img alt="logo" src="/images/infinity-logo.png" width="150px" height="150px" />
 
 # SlipStream
 
@@ -35,13 +37,11 @@ Home page consists of the following sections:
 - Feature Section about SlipStream
 - Customer Reviews
 
-![image](images/home.jpg)
+![image](https://user-images.githubusercontent.com/42909334/162213604-ca7a1f8d-529a-4889-a0f3-470bd2e87861.png)
 
 ---
 
 ### PRODUCT LISTING
-
-Link : https://slipstream-shop.netlify.app/pages/product-listing/product.html
 
 Product listing page consists of the following sections:
 
@@ -49,13 +49,11 @@ Product listing page consists of the following sections:
 - Sort By (where products can be sorted by Most Popular, Best Rating, Newest)
 - Product cards
 
-![image](images/product-listing.jpg)
+![image](https://user-images.githubusercontent.com/42909334/162214943-2eaeff2c-d9b7-40c7-8885-ac799591cefd.png)
 
 ---
 
 ### CART
-
-Link : https://slipstream-shop.netlify.app/pages/cart/cart.html
 
 Cart page consists of the follwing sections:
 
@@ -65,19 +63,17 @@ Cart page consists of the follwing sections:
 - Payment Mode Management
 - Order Summary
 
-![image](images/cart.jpg)
+![image](https://user-images.githubusercontent.com/42909334/162215260-ce399dc3-33e8-4672-83e2-d474814f440c.png)
 
 ---
 
 ### WISHLIST
 
-Link : https://slipstream-shop.netlify.app/pages/wishlist/wishlist.html
-
 Wishlist page consists of the follwing sections:
 
 - Products added in the wishlist (with options to move/remove them to/from cart along with quantity information).
 
-![image](images/wishlist-page.jpg)
+![image](https://user-images.githubusercontent.com/42909334/162215550-1aa9d247-edcf-4276-a2f2-0e2014b3ac73.png)
 
 ---
 
@@ -85,20 +81,21 @@ Wishlist page consists of the follwing sections:
 
 Auth consists of two parts:
 
-- Sign In Page : https://slipstream-shop.netlify.app/pages/auth/signin.html
-- Sign Up Page : https://slipstream-shop.netlify.app/pages/auth/signup.html
+- Sign In Page
+- Sign Up Page
 
 Sign In page consists of the following sections:
 
 - Sign In with social like Google, Facebook or Twitter
 - Standard Email and Password login
+- Login with Mock Credentials
 - Option to Sign Up of a user does not have an existing account
 
-![image](images/sign-in.jpg)
+![image](https://user-images.githubusercontent.com/42909334/162215791-0569672e-1df3-47fe-ab09-d5fd97fe73f4.png)
 
 Sign Up page consists of the following sections:
 
-- Sign up with details like (Name, Email, DoB etc)
+- Sign up with details like (Name, Email etc)
 - Option to Sign In if a user already has an account
 
-![image](images/sign-up.jpg)
+![image](https://user-images.githubusercontent.com/42909334/162215867-0d664ade-54db-4820-8868-d4d09c6fc0be.png)
