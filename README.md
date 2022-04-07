@@ -1,6 +1,6 @@
 <div align="center">
   
- <img alt="logo" src="/images/infinity-logo.png" width="150px" height="150px" />
+ <img alt="logo" src="/public/favicon.ico" width="150px" height="150px" />
 
 # SlipStream
 
